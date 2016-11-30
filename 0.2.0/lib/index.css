@@ -13,6 +13,7 @@ html .pa-paging .pa-pagingDisable:hover {
 .pa-paging--fast {
   line-height: 25px;
   font-size: 14px;
+  color: #666;
 }
 .pa-paging--fast .pa-paging-prevBtn,
 .pa-paging--fast .pa-paging-nextBtn {
@@ -30,7 +31,6 @@ html .pa-paging .pa-pagingDisable:hover {
 .pa-paging--fast .pa-paging-nextBtn {
   display: inline-block;
   border: 1px solid #eee;
-  color: #666;
   min-width: 25px;
   min-height: 25px;
   text-align: center;
@@ -58,6 +58,10 @@ html .pa-paging .pa-pagingDisable:hover {
   border-color: #20a0ff;
 }
 .pa-paging--fast .pa-paging-goto-input {
+  position: relative;
+  top: -1px;
+  margin-left: 2px;
+  margin-right: 2px;
   color: #666;
   -webkit-border-radius: 3px;
           border-radius: 3px;
@@ -70,7 +74,6 @@ html .pa-paging .pa-pagingDisable:hover {
 }
 .pa-paging--fast .pa-paging-goto-submit {
   cursor: pointer;
-  margin-left: 5px;
   padding-left: .3em;
   padding-right: .3em;
   display: inline-block;

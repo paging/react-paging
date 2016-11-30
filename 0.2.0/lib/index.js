@@ -99,12 +99,13 @@ var Paging = function (_Component) {
 
             var self = this;
             var props = self.props;
-            var paging = (0, _paging.createData)(props);
+            var pagingData = (0, _paging.createData)(props);
             var clsp = props.clsp;
             var nodes = [];
             self.props.position.forEach(function (key, index) {
                 var _classNames, _classNames2, _classNames3, _classNames4, _classNames5, _classNames6, _classNames7;
 
+                var paging = (0, _extend2["default"])(true, {}, pagingData);
                 var component = self.props.render[key];
                 var OutputComponent = void 0;
                 switch (key) {
@@ -213,7 +214,8 @@ var Paging = function (_Component) {
                             statusPageCount: clsp + "-status-pageCount",
                             satusUnit: clsp + "-status-unit"
                         };
-                        OutputComponent = require("react").createElement("component", _extends({}, paging, { key: index }));
+                        paging.key = index;
+                        OutputComponent = (0, _react.createElement)(component, paging);
                         break;
                     case "goto":
                         if (component && component !== 'default') {
@@ -251,7 +253,7 @@ var Paging = function (_Component) {
             });
             return require("react").createElement(
                 "span",
-                { className: (0, _classnames2["default"])((_classNames8 = {}, _defineProperty(_classNames8, clsp, true), _defineProperty(_classNames8, props.wrapClassName, true), _defineProperty(_classNames8, clsp + 'Hide', paging.hasPaging), _classNames8)) },
+                { className: (0, _classnames2["default"])((_classNames8 = {}, _defineProperty(_classNames8, clsp, true), _defineProperty(_classNames8, props.wrapClassName, true), _defineProperty(_classNames8, clsp + 'Hide', pagingData.hasPaging), _classNames8)) },
                 nodes
             );
         }

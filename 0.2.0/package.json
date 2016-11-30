@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "extend": "^3.0.0",
     "paging": "^0.1.1",
     "react": "^0.14.8",
     "react-dom": "^0.14.8"

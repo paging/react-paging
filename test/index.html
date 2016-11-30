@@ -349,12 +349,13 @@
 
 					var self = this;
 					var props = self.props;
-					var paging = (0, _paging.createData)(props);
+					var pagingData = (0, _paging.createData)(props);
 					var clsp = props.clsp;
 					var nodes = [];
 					self.props.position.forEach(function (key, index) {
 						var _classNames, _classNames2, _classNames3, _classNames4, _classNames5, _classNames6, _classNames7;
 
+						var paging = (0, _extend2["default"])(true, {}, pagingData);
 						var component = self.props.render[key];
 						var OutputComponent = void 0;
 						switch (key) {
@@ -423,7 +424,8 @@
 									statusPageCount: clsp + "-status-pageCount",
 									satusUnit: clsp + "-status-unit"
 								};
-								OutputComponent = __webpack_require__(10).createElement("component", _extends({}, paging, { key: index }));
+								paging.key = index;
+								OutputComponent = (0, _react.createElement)(component, paging);
 								break;
 							case "goto":
 								if (component && component !== 'default') {
@@ -450,7 +452,7 @@
 							nodes.push(OutputComponent);
 						}
 					});
-					return __webpack_require__(10).createElement("span", { className: (0, _classnames2["default"])((_classNames8 = {}, _defineProperty(_classNames8, clsp, true), _defineProperty(_classNames8, props.wrapClassName, true), _defineProperty(_classNames8, clsp + 'Hide', paging.hasPaging), _classNames8)) }, nodes);
+					return __webpack_require__(10).createElement("span", { className: (0, _classnames2["default"])((_classNames8 = {}, _defineProperty(_classNames8, clsp, true), _defineProperty(_classNames8, props.wrapClassName, true), _defineProperty(_classNames8, clsp + 'Hide', pagingData.hasPaging), _classNames8)) }, nodes);
 				}
 			}]);
 
@@ -1509,7 +1511,7 @@
 						displayName: 'status',
 
 						render: function render() {
-							return __webpack_require__(10).createElement('span', { className: this.props.classNames.status }, __webpack_require__(10).createElement('span', { className: this.props.classNames.statusCurrent }, this.page), '/', __webpack_require__(10).createElement('span', { className: this.props.classNames.statusPageCount }, this.pageCount), __webpack_require__(10).createElement('span', { className: this.props.classNames.satusUnit }, '\u9875'));
+							return __webpack_require__(10).createElement('span', { className: this.props.classNames.status }, __webpack_require__(10).createElement('span', { className: this.props.classNames.statusCurrent }, this.props.page), '/', __webpack_require__(10).createElement('span', { className: this.props.classNames.statusPageCount }, this.props.pageCount), __webpack_require__(10).createElement('span', { className: this.props.classNames.satusUnit }, '\u9875'));
 						}
 					}),
 					"goto": 'default'
@@ -1568,7 +1570,7 @@
 
 
 		// module
-		exports.push([module.id, "html .pa-paging .pa-pagingHide {\n  display: none;\n}\nhtml .pa-paging .pa-pagingDisable {\n  opacity: .8;\n}\nhtml .pa-paging .pa-pagingDisable:hover {\n  background-color: white;\n  border-color: #eee;\n  color: #666;\n  cursor: auto;\n}\n.pa-paging--fast {\n  line-height: 25px;\n  font-size: 14px;\n}\n.pa-paging--fast .pa-paging-prevBtn,\n.pa-paging--fast .pa-paging-nextBtn {\n  padding-left: .5em;\n  padding-right: .5em;\n}\n.pa-paging--fast .pa-paging-firstPage,\n.pa-paging--fast .pa-paging-prevSomePage,\n.pa-paging--fast .pa-paging-prevBatch,\n.pa-paging--fast .pa-paging-currentPage,\n.pa-paging--fast .pa-paging-nextBatch,\n.pa-paging--fast .pa-paging-nextSomePage,\n.pa-paging--fast .pa-paging-lastPage,\n.pa-paging--fast .pa-paging-prevBtn,\n.pa-paging--fast .pa-paging-nextBtn {\n  display: inline-block;\n  border: 1px solid #eee;\n  color: #666;\n  min-width: 25px;\n  min-height: 25px;\n  text-align: center;\n  margin-left: 2px;\n  margin-right: 2px;\n  -webkit-border-radius: 3px;\n          border-radius: 3px;\n  background-color: white;\n}\n.pa-paging--fast .pa-paging-firstPage:hover,\n.pa-paging--fast .pa-paging-prevSomePage:hover,\n.pa-paging--fast .pa-paging-prevBatch:hover,\n.pa-paging--fast .pa-paging-nextBatch:hover,\n.pa-paging--fast .pa-paging-nextSomePage:hover,\n.pa-paging--fast .pa-paging-lastPage:hover,\n.pa-paging--fast .pa-paging-prevBtn:hover,\n.pa-paging--fast .pa-paging-nextBtn:hover {\n  background-color: #efefef;\n  border-color: #ddd;\n  cursor: pointer;\n}\n.pa-paging--fast .pa-paging-currentPage {\n  background-color: #20a0ff;\n  color: white;\n  border-color: #20a0ff;\n}\n.pa-paging--fast .pa-paging-goto-input {\n  color: #666;\n  -webkit-border-radius: 3px;\n          border-radius: 3px;\n  display: inline-block;\n  height: 25px;\n  width: 3em;\n  padding: 0;\n  border: 1px solid #eee;\n  text-align: center;\n}\n.pa-paging--fast .pa-paging-goto-submit {\n  cursor: pointer;\n  margin-left: 5px;\n  padding-left: .3em;\n  padding-right: .3em;\n  display: inline-block;\n  border: 1px solid #eee;\n  color: #666;\n  -webkit-border-radius: 3px;\n          border-radius: 3px;\n  height: 25px;\n  background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f9f9f9));\n  background: -moz-linear-gradient(top, #fcfcfc, #f9f9f9);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f9f9f9');\n  background: -webkit-gradient(linear, left top, left bottom, from(top), color-stop(#fcfcfc), to(#f9f9f9));\n  background: -webkit-linear-gradient(top, #fcfcfc, #f9f9f9);\n  background: linear-gradient(top, #fcfcfc, #f9f9f9);\n}\n", ""]);
+		exports.push([module.id, "html .pa-paging .pa-pagingHide {\n  display: none;\n}\nhtml .pa-paging .pa-pagingDisable {\n  opacity: .8;\n}\nhtml .pa-paging .pa-pagingDisable:hover {\n  background-color: white;\n  border-color: #eee;\n  color: #666;\n  cursor: auto;\n}\n.pa-paging--fast {\n  line-height: 25px;\n  font-size: 14px;\n  color: #666;\n}\n.pa-paging--fast .pa-paging-prevBtn,\n.pa-paging--fast .pa-paging-nextBtn {\n  padding-left: .5em;\n  padding-right: .5em;\n}\n.pa-paging--fast .pa-paging-firstPage,\n.pa-paging--fast .pa-paging-prevSomePage,\n.pa-paging--fast .pa-paging-prevBatch,\n.pa-paging--fast .pa-paging-currentPage,\n.pa-paging--fast .pa-paging-nextBatch,\n.pa-paging--fast .pa-paging-nextSomePage,\n.pa-paging--fast .pa-paging-lastPage,\n.pa-paging--fast .pa-paging-prevBtn,\n.pa-paging--fast .pa-paging-nextBtn {\n  display: inline-block;\n  border: 1px solid #eee;\n  min-width: 25px;\n  min-height: 25px;\n  text-align: center;\n  margin-left: 2px;\n  margin-right: 2px;\n  -webkit-border-radius: 3px;\n          border-radius: 3px;\n  background-color: white;\n}\n.pa-paging--fast .pa-paging-firstPage:hover,\n.pa-paging--fast .pa-paging-prevSomePage:hover,\n.pa-paging--fast .pa-paging-prevBatch:hover,\n.pa-paging--fast .pa-paging-nextBatch:hover,\n.pa-paging--fast .pa-paging-nextSomePage:hover,\n.pa-paging--fast .pa-paging-lastPage:hover,\n.pa-paging--fast .pa-paging-prevBtn:hover,\n.pa-paging--fast .pa-paging-nextBtn:hover {\n  background-color: #efefef;\n  border-color: #ddd;\n  cursor: pointer;\n}\n.pa-paging--fast .pa-paging-currentPage {\n  background-color: #20a0ff;\n  color: white;\n  border-color: #20a0ff;\n}\n.pa-paging--fast .pa-paging-goto-input {\n  position: relative;\n  top: -1px;\n  margin-left: 2px;\n  margin-right: 2px;\n  color: #666;\n  -webkit-border-radius: 3px;\n          border-radius: 3px;\n  display: inline-block;\n  height: 25px;\n  width: 3em;\n  padding: 0;\n  border: 1px solid #eee;\n  text-align: center;\n}\n.pa-paging--fast .pa-paging-goto-submit {\n  cursor: pointer;\n  padding-left: .3em;\n  padding-right: .3em;\n  display: inline-block;\n  border: 1px solid #eee;\n  color: #666;\n  -webkit-border-radius: 3px;\n          border-radius: 3px;\n  height: 25px;\n  background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f9f9f9));\n  background: -moz-linear-gradient(top, #fcfcfc, #f9f9f9);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f9f9f9');\n  background: -webkit-gradient(linear, left top, left bottom, from(top), color-stop(#fcfcfc), to(#f9f9f9));\n  background: -webkit-linear-gradient(top, #fcfcfc, #f9f9f9);\n  background: linear-gradient(top, #fcfcfc, #f9f9f9);\n}\n", ""]);
 
 		// exports
 
