@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" ></meta>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+<!--[if lte IE 10]>
+<script src="doc/vendor/polyfill/main.js" ></script>
+<![endif]-->
+<script src="doc/vendor/react/0.14.8/react.js" ></script>
+<script src="doc/vendor/react/0.14.8/react-dom.js" ></script>
+<link rel="stylesheet" href="doc/static/doc.css">
+<title> react-paging</title>
+</head>
+<body >
+<div class="fastboot-nav">
+<ul>
+<li class="fastboot-nav-title" >paging/react-paging</li>
+<li><a href="index.html">Home</a></li>
+<li><a href="doc/index.html">Document</a></li>
+<li><a href="example/index.html">Example</a></li>
+<li><a href="test/index.html">Test</a></li>
+<li>Version: <select id="fastbootVersionSelect"><option value="">latest</option><option value="">loading...</option></select></li>
+<li>
+<iframe src="https://ghbtns.com/github-btn.html?user=paging&repo=react-paging&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="20px" class="github-btn"  ></iframe>
+</li>
+</ul>
+</div>
+<div class="markdown-body" >
+<h1><a name="react-paging" class="markrun-anchor" href="#react-paging"><span class="markrun-anchor-link"></span></a>react-paging</h1><blockquote>
+<p>React,Paging generator,Completely custom style. 可完全自定义界面的 React 分页</p>
+</blockquote>
+<p><a href="https://travis-ci.org/paging/react-paging"><img src="https://api.travis-ci.org/paging/react-paging.svg" alt="Build Status"></a> <a href="https://npmjs.org/package/react-paging"><img src="https://img.shields.io/npm/v/react-paging.svg?style=flat" alt="NPM version"></a> <a href="https://npmjs.org/package/react-paging"><img src="https://img.shields.io/npm/dt/react-paging.svg" alt="NPM downloads"></a></p>
+<div style="display:none;"  >
+<p><a href="https://paging.github.io/react-paging/">🔗 Live demo</a><br><a href="https://github.com/paging/react-paging/releases">🕐 Releases</a></p>
+<p>🌀 <a href="example/index.html">Example</a> 🌀 <a href="doc/index.html">Doc</a> 🌀 <a href="test/index.html">Test</a>  </p>
+</div>
+<h2><a name="-install" class="markrun-anchor" href="#-install"><span class="markrun-anchor-link"></span></a>📦 Install</h2><pre><code class="lang-shell">npm <span class="hljs-selector-tag">i</span> react-paging --save
+</code></pre>
+<h2><a name="-usage" class="markrun-anchor" href="#-usage"><span class="markrun-anchor-link"></span></a>📄 Usage</h2><div class="markrun markrun--html">
+<div class="markrun-html"></div>
+<div class="markrun-code">
+<div id="demo"></div></div>
+<div class="markrun-source">
+<pre class="markrun-source-pre">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"demo"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;</pre>
+</div>
+</div>
+<div class="markrun markrun--js">
+<div class="markrun-html"></div>
+<div class="markrun-code">
+
+</div>
+<div class="markrun-source">
+<pre class="markrun-source-pre"><span class="hljs-keyword">var</span> Paging = <span class="hljs-keyword">require</span>(<span class="hljs-string">'react-paging'</span>)
+<span class="hljs-keyword">var</span> React = <span class="hljs-keyword">require</span>(<span class="hljs-string">'react'</span>)
+<span class="hljs-keyword">var</span> App = React.createClass({
+    getInitialState: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> {
+            page: <span class="hljs-number">10</span>
+        }
+    },
+    render: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">var</span> <span class="hljs-keyword">self</span> = this
+        <span class="hljs-keyword">return</span> (
+            &lt;div&gt;
+                &lt;Paging {...{
+                    page: <span class="hljs-keyword">self</span>.state.page,
+                    pageCount: <span class="hljs-number">20</span>,
+                    onChange: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(page)</span> </span>{
+                        <span class="hljs-keyword">self</span>.setState({
+                            page: page
+                        })
+                    }
+                }} /&gt;
+            &lt;/div&gt;
+        )
+    }
+})
+
+ReactDOM.render(&lt;App /&gt;, document.getElementById(<span class="hljs-string">'demo'</span>))</pre>
+</div>
+</div>
+<h2><a name="props" class="markrun-anchor" href="#props"><span class="markrun-anchor-link"></span></a>props</h2><p><a href="lib/props.js">props</a>
+<!--MARKRUN-REPLACE
+{
+    type: 'react-props',
+    file: './lib/props.js'
+}
+--></p>
+<h2><a name="pa-paging-fast" class="markrun-anchor" href="#pa-paging-fast"><span class="markrun-anchor-link"></span></a>.pa-paging--fast</h2><p><a href="lib/index.css">default style</a></p>
+<p><style>.gc-comments {font:12px/1.5 Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif}</style></p>
+<p><script src="https://unpkg.com/github-comments@latest/gc.js"></script></p>
+<div class="gc-comments" data-repos="paging/react-paging" data-issues="1" >
+    <div class="gc-comments-title">
+        Comments
+    </div>
+    <div class="gc-comments-info">
+        Synchronous comments <a target="_blank" href="issues_link">issues_link</a>
+    </div>
+</div>
+
+
+<h2><a name="-development" class="markrun-anchor" href="#-development"><span class="markrun-anchor-link"></span></a>🔨 development</h2><pre><code class="lang-shell">npm i -g fis3 --registry=https://registry.npm.taobao.org
+<span class="hljs-comment"># Install dependencies | 安装依赖</span>
+npm <span class="hljs-keyword">run</span><span class="bash"> dep
+</span>    <span class="hljs-comment"># &gt; Suggested Use `yarn` replace `npm run dep` | 建议使用 `yarn` 替代 `npm run dep`</span>
+    <span class="hljs-comment"># npm i -g yarn</span>
+    <span class="hljs-comment"># npm run yi</span>
+
+<span class="hljs-comment"># Server</span>
+npm <span class="hljs-keyword">run</span><span class="bash"> s
+</span>
+<span class="hljs-comment"># Build</span>
+npm <span class="hljs-keyword">run</span><span class="bash"> dev
+</span>
+
+<span class="hljs-comment">#  build document ./output | 构建 gh-pages 版本 到 output/</span>
+npm <span class="hljs-keyword">run</span><span class="bash"> gh
+</span><span class="hljs-comment">#  git push ./output branch:gh-pages | 将 output/** 发布到 gh-pages 分支</span>
+npm <span class="hljs-keyword">run</span><span class="bash"> gh-push
+</span><span class="hljs-comment"># build commonjs code ./output | 构建 npm 要发布的代码到 output/</span>
+npm <span class="hljs-keyword">run</span><span class="bash"> npm
+</span>cd ./output
+npm publish
+</code></pre>
+<p>Build based on <a href="https://github.com/fast-flow/boot#react-branch">fast-boot</a></p>
+<blockquote>
+<p>For npm owner: npm publish Need to be in ./output</p>
+</blockquote><script data-markrun-lastrun="true">/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	/******/(function (modules) {
+		// webpackBootstrap
+		/******/ // The module cache
+		/******/var installedModules = {};
+
+		/******/ // The require function
+		/******/function __webpack_require__(moduleId) {
+
+			/******/ // Check if module is in cache
+			/******/if (installedModules[moduleId])
+				/******/return installedModules[moduleId].exports;
+
+			/******/ // Create a new module (and put it into the cache)
+			/******/var module = installedModules[moduleId] = {
+				/******/exports: {},
+				/******/id: moduleId,
+				/******/loaded: false
+				/******/ };
+
+			/******/ // Execute the module function
+			/******/modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+			/******/ // Flag the module as loaded
+			/******/module.loaded = true;
+
+			/******/ // Return the exports of the module
+			/******/return module.exports;
+			/******/
+		}
+
+		/******/ // expose the modules object (__webpack_modules__)
+		/******/__webpack_require__.m = modules;
+
+		/******/ // expose the module cache
+		/******/__webpack_require__.c = installedModules;
+
+		/******/ // __webpack_public_path__
+		/******/__webpack_require__.p = "";
+
+		/******/ // Load entry module and return exports
+		/******/return __webpack_require__(0);
+		/******/
+	})(
+	/************************************************************************/
+	/******/[
+	/* 0 */
+	/***/function (module, exports, __webpack_require__) {
+
+		'use strict';
+
+		var Paging = __webpack_require__(1);
+		var React = __webpack_require__(10);
+		var App = React.createClass({
+			displayName: 'App',
+
+			getInitialState: function getInitialState() {
+				return {
+					page: 10
+				};
+			},
+			render: function render() {
+				var self = this;
+				return __webpack_require__(10).createElement('div', null, __webpack_require__(10).createElement(Paging, {
+					page: self.state.page,
+					pageCount: 20,
+					onChange: function onChange(page) {
+						self.setState({
+							page: page
+						});
+					}
+				}));
+			}
+		});
+
+		ReactDOM.render(__webpack_require__(10).createElement(App, null), document.getElementById('demo'));
+
+		/***/
+	},
+	/* 1 */
+	/***/function (module, exports, __webpack_require__) {
+
+		'use strict';
+
+		Object.defineProperty(exports, "__esModule", {
+			value: true
+		});
+		exports["default"] = __webpack_require__(2);
+
+		module.exports = __webpack_require__(2);
+
+		/***/
+	},
+	/* 2 */
+	/***/function (module, exports, __webpack_require__) {
+
+		"use strict";
+
+		var _extends = Object.assign || function (target) {
+			for (var i = 1; i < arguments.length; i++) {
+				var source = arguments[i];for (var key in source) {
+					if (Object.prototype.hasOwnProperty.call(source, key)) {
+						target[key] = source[key];
+					}
+				}
+			}return target;
+		};
+
+		var _createClass = function () {
+			function defineProperties(target, props) {
+				for (var i = 0; i < props.length; i++) {
+					var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+				}
+			}return function (Constructor, protoProps, staticProps) {
+				if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+			};
+		}();
+
+		var _classnames = __webpack_require__(3);
+
+		var _classnames2 = _interopRequireDefault(_classnames);
+
+		var _paging = __webpack_require__(4);
+
+		var _react = __webpack_require__(10);
+
+		var _extend = __webpack_require__(8);
+
+		var _extend2 = _interopRequireDefault(_extend);
+
+		var _props = __webpack_require__(11);
+
+		var _props2 = _interopRequireDefault(_props);
+
+		function _interopRequireDefault(obj) {
+			return obj && obj.__esModule ? obj : { "default": obj };
+		}
+
+		function _defineProperty(obj, key, value) {
+			if (key in obj) {
+				Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
+			} else {
+				obj[key] = value;
+			}return obj;
+		}
+
+		function _classCallCheck(instance, Constructor) {
+			if (!(instance instanceof Constructor)) {
+				throw new TypeError("Cannot call a class as a function");
+			}
+		}
+
+		function _possibleConstructorReturn(self, call) {
+			if (!self) {
+				throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+			}return call && ((typeof call === 'undefined' ? 'undefined' : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+		}
+
+		function _inherits(subClass, superClass) {
+			if (typeof superClass !== "function" && superClass !== null) {
+				throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === 'undefined' ? 'undefined' : _typeof(superClass)));
+			}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+		}
+
+		__webpack_require__(12);
+
+		var Paging = function (_Component) {
+			_inherits(Paging, _Component);
+
+			function Paging(props) {
+				_classCallCheck(this, Paging);
+
+				var _this = _possibleConstructorReturn(this, (Paging.__proto__ || Object.getPrototypeOf(Paging)).call(this, props));
+
+				var paging = (0, _paging.createData)(props);
+				_this.state = {
+					gotoInput: paging.page
+				};
+				return _this;
+			}
+
+			_createClass(Paging, [{
+				key: "ms",
+				value: function ms(action) {
+					var self = this;
+					var state = self.state;
+					switch (action.type) {
+						case 'CHANGE_GOTO_INPUT':
+							state.gotoInput = action.value;
+							var rNumber = /\D/g;
+							if (rNumber.test(state.gotoInput)) {
+								state.gotoInput = state.gotoInput.replace(rNumber, '');
+							}
+							state.gotoInput = Number(state.gotoInput);
+							if (state.gotoInput === 0) {
+								state.gotoInput = '';
+							}
+							if (isNaN(state.gotoInput)) {
+								state.gotoInput = '';
+							}
+							break;
+						case 'CHANGE_PAGE':
+							self.props.onChange(action.page);
+						default:
+					}
+					self.setState(state);
+				}
+			}, {
+				key: "componentWillReceiveProps",
+				value: function componentWillReceiveProps(nextProps) {
+					var self = this;
+					if (nextProps.page) {
+						self.setState({
+							gotoInput: nextProps.page
+						});
+					}
+				}
+			}, {
+				key: "changePage",
+				value: function changePage(page) {
+					var self = this;
+					self.ms({
+						type: 'CHANGE_PAGE',
+						page: page
+					});
+				}
+			}, {
+				key: "render",
+				value: function render() {
+					var _classNames8;
+
+					var self = this;
+					var props = self.props;
+					var paging = (0, _paging.createData)(props);
+					var clsp = props.clsp;
+					var nodes = [];
+					self.props.position.forEach(function (key, index) {
+						var _classNames, _classNames2, _classNames3, _classNames4, _classNames5, _classNames6, _classNames7;
+
+						var component = self.props.render[key];
+						var OutputComponent = void 0;
+						switch (key) {
+							case "dataCount":
+								OutputComponent = __webpack_require__(10).createElement("span", { key: index, className: (0, _classnames2["default"])((_classNames = {}, _defineProperty(_classNames, clsp + '-dataCount', true), _defineProperty(_classNames, clsp + 'Hide', !paging.dataCount), _classNames)) }, (0, _react.createElement)(component, paging));
+								break;
+							case "prevBtn":
+								OutputComponent = __webpack_require__(10).createElement("span", { key: index, className: (0, _classnames2["default"])((_classNames2 = {}, _defineProperty(_classNames2, clsp + '-prevBtn', true), _defineProperty(_classNames2, clsp + 'Disable', !paging.prevPage), _classNames2)), onClick: function onClick() {
+										if (paging.prevPage) {
+											self.changePage(paging.prevPage);
+										}
+									} }, (0, _react.createElement)(component, paging));
+								break;
+							case "firstPage":
+								OutputComponent = __webpack_require__(10).createElement("span", { key: index, className: (0, _classnames2["default"])((_classNames3 = {}, _defineProperty(_classNames3, clsp + '-firstPage', true), _defineProperty(_classNames3, clsp + 'Hide', paging.isFirstPage), _classNames3)), onClick: function onClick() {
+										self.changePage(1);
+									} }, (0, _react.createElement)(component, paging));
+								break;
+							case "prevSomePage":
+								OutputComponent = __webpack_require__(10).createElement("span", { key: index, className: (0, _classnames2["default"])((_classNames4 = {}, _defineProperty(_classNames4, clsp + '-prevSomePage', true), _defineProperty(_classNames4, clsp + 'Hide', !paging.prevHasMorePage), _classNames4)), onClick: function onClick() {
+										self.changePage(paging.prevSomePage);
+									} }, (0, _react.createElement)(component, paging));
+								break;
+							case "prevBatch":
+								paging.prevBatch.forEach(function (item, index) {
+									paging.prevBatchIndex = index;
+									nodes.push(__webpack_require__(10).createElement("span", { key: 'prevBatch' + index, className: clsp + "-prevBatch", onClick: function onClick() {
+											self.changePage(item);
+										} }, (0, _react.createElement)(component, paging)));
+								});
+								break;
+							case "currentPage":
+								OutputComponent = __webpack_require__(10).createElement("span", { key: index, className: clsp + "-currentPage", onClick: function onClick() {
+										self.changePage(paging.page);
+									} }, (0, _react.createElement)(component, paging));
+								break;
+							case "nextBatch":
+								paging.nextBatch.forEach(function (item, index) {
+									paging.nextBatchIndex = index;
+									nodes.push(__webpack_require__(10).createElement("span", { key: 'nextBatch' + index, className: clsp + "-nextBatch", onClick: function onClick() {
+											self.changePage(item);
+										} }, (0, _react.createElement)(component, paging)));
+								});
+								break;
+							case "nextSomePage":
+								OutputComponent = __webpack_require__(10).createElement("span", { key: index, className: (0, _classnames2["default"])((_classNames5 = {}, _defineProperty(_classNames5, clsp + '-nextSomePage', true), _defineProperty(_classNames5, clsp + 'Hide', !paging.nextHasMorePage), _classNames5)), onClick: function onClick() {
+										self.changePage(paging.nextSomePage);
+									} }, (0, _react.createElement)(component, paging));
+								break;
+							case "lastPage":
+								OutputComponent = __webpack_require__(10).createElement("span", { key: index, className: (0, _classnames2["default"])((_classNames6 = {}, _defineProperty(_classNames6, clsp + '-lastPage', true), _defineProperty(_classNames6, clsp + 'Hide', paging.isLastPage || paging.page === paging.pageCount), _classNames6)), onClick: function onClick() {
+										self.changePage(paging.pageCount);
+									} }, (0, _react.createElement)(component, paging));
+								break;
+							case "nextBtn":
+								OutputComponent = __webpack_require__(10).createElement("span", { key: index, className: (0, _classnames2["default"])((_classNames7 = {}, _defineProperty(_classNames7, clsp + '-nextBtn', true), _defineProperty(_classNames7, clsp + 'Disable', !paging.nextPage), _classNames7)), onClick: function onClick() {
+										if (paging.nextPage) {
+											self.changePage(paging.nextPage);
+										}
+									} }, (0, _react.createElement)(component, paging));
+								break;
+							case "status":
+								paging.classNames = {
+									status: clsp + "-status",
+									statusCurrent: clsp + "-status-current",
+									statusPageCount: clsp + "-status-pageCount",
+									satusUnit: clsp + "-status-unit"
+								};
+								OutputComponent = __webpack_require__(10).createElement("component", _extends({}, paging, { key: index }));
+								break;
+							case "goto":
+								if (component && component !== 'default') {
+									OutputComponent = __webpack_require__(10).createElement("component", _extends({}, paging, { key: index }));
+								} else {
+									OutputComponent = __webpack_require__(10).createElement("span", { key: index, className: clsp + "-goto" }, __webpack_require__(10).createElement("input", { ref: "gotoInput", className: clsp + "-goto-input", value: self.state.gotoInput, onChange: function onChange(e) {
+											self.ms({
+												type: 'CHANGE_GOTO_INPUT',
+												value: e.target.value
+											});
+										} }), __webpack_require__(10).createElement("span", { className: clsp + "-goto-submit", onClick: function onClick() {
+											if (self.state.gotoInput) {
+												if (self.state.gotoInput !== paging.page) {
+													self.changePage(self.state.gotoInput);
+												}
+											} else {
+												self.refs.gotoInput.focus();
+											}
+										} }, '\u8DF3\u8F6C'));
+								}
+								break;
+						}
+						if (OutputComponent) {
+							nodes.push(OutputComponent);
+						}
+					});
+					return __webpack_require__(10).createElement("span", { className: (0, _classnames2["default"])((_classNames8 = {}, _defineProperty(_classNames8, clsp, true), _defineProperty(_classNames8, props.wrapClassName, true), _defineProperty(_classNames8, clsp + 'Hide', paging.hasPaging), _classNames8)) }, nodes);
+				}
+			}]);
+
+			return Paging;
+		}(_react.Component);
+
+		Paging.defaultProps = _props2["default"].defaultProps;
+		Paging.propTypes = _props2["default"].propTypes;
+
+		module.exports = Paging;
+
+		/***/
+	},
+	/* 3 */
+	/***/function (module, exports, __webpack_require__) {
+
+		var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__; /*!
+	                                                                  Copyright (c) 2016 Jed Watson.
+	                                                                  Licensed under the MIT License (MIT), see
+	                                                                  http://jedwatson.github.io/classnames
+	                                                                  */
+		/* global define */
+
+		(function () {
+			'use strict';
+
+			var hasOwn = {}.hasOwnProperty;
+
+			function classNames() {
+				var classes = [];
+
+				for (var i = 0; i < arguments.length; i++) {
+					var arg = arguments[i];
+					if (!arg) continue;
+
+					var argType = typeof arg === 'undefined' ? 'undefined' : _typeof(arg);
+
+					if (argType === 'string' || argType === 'number') {
+						classes.push(arg);
+					} else if (Array.isArray(arg)) {
+						classes.push(classNames.apply(null, arg));
+					} else if (argType === 'object') {
+						for (var key in arg) {
+							if (hasOwn.call(arg, key) && arg[key]) {
+								classes.push(key);
+							}
+						}
+					}
+				}
+
+				return classes.join(' ');
+			}
+
+			if (typeof module !== 'undefined' && module.exports) {
+				module.exports = classNames;
+			} else if (true) {
+				// register as 'classnames', consistent with npm package name
+				!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+					return classNames;
+				}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+			} else {
+				window.classNames = classNames;
+			}
+		})();
+
+		/***/
+	},
+	/* 4 */
+	/***/function (module, exports, __webpack_require__) {
+
+		'use strict';
+
+		Object.defineProperty(exports, "__esModule", {
+			value: true
+		});
+		exports["default"] = __webpack_require__(5);
+
+		module.exports = __webpack_require__(5);
+
+		/***/
+	},
+	/* 5 */
+	/***/function (module, exports, __webpack_require__) {
+
+		'use strict';
+
+		module.exports = {
+			createData: __webpack_require__(6)
+		};
+
+		/***/
+	},
+	/* 6 */
+	/***/function (module, exports, __webpack_require__) {
+
+		"use strict";
+
+		Object.defineProperty(exports, "__esModule", {
+			value: true
+		});
+
+		var _propTypes = __webpack_require__(7);
+
+		var _propTypes2 = _interopRequireDefault(_propTypes);
+
+		var _extend = __webpack_require__(8);
+
+		var _extend2 = _interopRequireDefault(_extend);
+
+		function _interopRequireDefault(obj) {
+			return obj && obj.__esModule ? obj : { "default": obj };
+		}
+
+		var props = __webpack_require__(9).createData;
+		var createData = function createData(settings) {
+			_propTypes2["default"].validate(props.propTypes, settings, 'paging.createData');
+			// object.assign
+			settings = (0, _extend2["default"])(true, {}, settings);
+			settings = (0, _extend2["default"])(true, props.defaultProps(), settings);
+			if (typeof settings.pageCount === 'undefined') {
+				if (typeof settings.pageSize === 'undefined' || typeof settings.dataCount === 'undefined') {
+					throw new Error('settings: need pageCount or pageSize&dataCount!');
+				}
+			}
+			var output = {
+				// {Bolean} 存在分页
+				hasPaging: null,
+				// {Number} 20 总页数
+				pageCount: null,
+				// {Number} 200 总数据量
+				dataCount: null,
+				// {Number} 9 当前页
+				page: null,
+				// {Boolean} false 当前页是第一页
+				isFirstPage: null,
+				// {Boolean} false 当前页是最后一页
+				isLastPage: null,
+				// {Array,Boolean} [6,7,8] false 当前页前几页不存在前几页则为 false (根据 传入的 prevPages 扩展)
+				prevBatch: null,
+				// {Array,Boolean} [10,11,12] false 当前页后几页  不存在后几页则为 false (根据 传入的 prevPages 扩展)
+				nextBatch: null,
+				// {Number} 8 上一页
+				prevPage: null,
+				// {Number} 10 下一页
+				nextPage: null,
+				// {Boolean} true 除了 prevBatch 和 第一页还存在其他页
+				prevHasMorePage: null,
+				// {Boolean} true除了 nextBatch 和 最后一页还存在其他页
+				nextHasMorePage: null,
+				// {Number|Boolean} 4 当前页前 5 页 (根据 传入的 prevSomePage 决定是前几页)
+				prevSomePage: null,
+				// {Number|Boolean} 14 当前页后 5 页 (根据 传入的 nextSomePage 决定是前几页)
+				nextSomePage: null,
+				// {Number} 每页显示多少条数据
+				pageSize: null
+			};
+			// ## pageCount
+			// 根据 dataCount 和 pageSize 计算出 pageCount
+			if (!settings.pageCount) {
+				settings.pageCount = Math.ceil(settings.dataCount / settings.pageSize);
+			} else {
+				output.dataCount = settings.dataCount;
+			}
+			output.pageCount = settings.pageCount;
+
+			// ## dataCount
+			output.dataCount = settings.dataCount || null;
+			// ## pageSize
+			output.pageSize = settings.pageSize || null;
+
+			// ## hasPaging
+			if (output.pageCount < 2) {
+				output.hasPaging = false;
+			} else {
+				output.hasPaging = false;
+			}
+			// ## page
+			// 当前页不会大于总页数
+			if (settings.page > settings.pageCount) {
+				output.page = settings.pageCount;
+			} else {
+				output.page = settings.page;
+			}
+			// ## isFirstPage
+			output.isFirstPage = output.page === 1;
+			// ## isLastPage
+			output.isLastPage = output.page === output.pageCount;
+			// ## prevBatch
+			// 当前页前几页
+			output.prevBatch = [];
+			var i;
+			for (i = 0; i < settings.prevBatch; i++) {
+				var iPage = output.page - i - 1;
+
+				/*
+	       只允许最小是 2
+	           只存在 [2,3]
+	           不存在 [1,2,3]
+	       1 是可以在模板中输出的
+	       例如模板是：
+	       <a href="page/?id=1" ></a>
+	       {{#each prevBatch}}
+	       <a href="page/?id={{this}}" ></a>
+	       {{/each}}
+	       渲染结果：
+	       <a href="page/?id=1" ></a>
+	       <a href="page/?id=2" ></a>
+	       <a href="page/?id=3" ></a>
+	       如果不需要 第一页就在模板中去掉
+	       <a href="page/?id=1" ></a>
+	   */
+				if (iPage > 1) {
+					output.prevBatch.unshift(iPage);
+					// [4]
+					// [3, 4]
+					// [2, 3, 4]
+				} else {
+					// stop loop
+					i = settings.prevBatch;
+				}
+			}
+
+			// ## prevHasMorePage
+			output.prevHasMorePage = output.page > 2 + settings.prevBatch;
+
+			// ## nextBatch
+			output.nextBatch = [];
+			var i;
+			for (i = 0; i < settings.nextBatch; i++) {
+				var iPage = output.page + i + 1;
+				if (iPage < output.pageCount) {
+					output.nextBatch.push(iPage);
+				} else {
+					// stop loop
+					i = settings.nextBatch;
+				}
+			}
+			// ## nextHasMorePage
+			output.nextHasMorePage = output.page < output.pageCount - settings.nextBatch - 1;
+			// ## prevPage
+			output.prevPage = output.page - 1;
+			if (output.prevPage < 1) {
+				output.prevPage = false;
+			}
+			// ## nextPage
+			output.nextPage = output.page + 1;
+			if (output.nextPage > output.pageCount) {
+				output.nextPage = false;
+			}
+			// ## prevSomePage
+			output.prevSomePage = output.page - settings.prevSomePage;
+			if (output.prevSomePage < 1) {
+				output.prevSomePage = 1;
+			}
+			// ## nextSomePage
+			output.nextSomePage = output.page + settings.nextSomePage;
+			if (output.nextSomePage > output.pageCount) {
+				output.nextSomePage = output.pageCount;
+			}
+
+			return output;
+		};
+		exports["default"] = createData;
+
+		module.exports = createData;
+
+		/***/
+	},
+	/* 7 */
+	/***/function (module, exports) {
+
+		module.exports =
+		/******/function (modules) {
+			// webpackBootstrap
+			/******/ // The module cache
+			/******/var installedModules = {};
+
+			/******/ // The require function
+			/******/function __webpack_require__(moduleId) {
+
+				/******/ // Check if module is in cache
+				/******/if (installedModules[moduleId])
+					/******/return installedModules[moduleId].exports;
+
+				/******/ // Create a new module (and put it into the cache)
+				/******/var module = installedModules[moduleId] = {
+					/******/exports: {},
+					/******/id: moduleId,
+					/******/loaded: false
+					/******/ };
+
+				/******/ // Execute the module function
+				/******/modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+				/******/ // Flag the module as loaded
+				/******/module.loaded = true;
+
+				/******/ // Return the exports of the module
+				/******/return module.exports;
+				/******/
+			}
+
+			/******/ // expose the modules object (__webpack_modules__)
+			/******/__webpack_require__.m = modules;
+
+			/******/ // expose the module cache
+			/******/__webpack_require__.c = installedModules;
+
+			/******/ // __webpack_public_path__
+			/******/__webpack_require__.p = "";
+
+			/******/ // Load entry module and return exports
+			/******/return __webpack_require__(0);
+			/******/
+		}(
+		/************************************************************************/
+		/******/[
+		/* 0 */
+		/***/function (module, exports, __webpack_require__) {
+
+			"use strict";
+
+			var _interopRequire = function _interopRequire(obj) {
+				return obj && obj.__esModule ? obj["default"] : obj;
+			};
+
+			var PropTypes = _interopRequire(__webpack_require__(1));
+
+			var validate = _interopRequire(__webpack_require__(2));
+
+			var validateWithErrors = _interopRequire(__webpack_require__(3));
+
+			var assign = Object.assign || function (target) {
+				for (var i = 1; i < arguments.length; i++) {
+					var source = arguments[i];
+					for (var key in source) {
+						if (Object.prototype.hasOwnProperty.call(source, key)) {
+							target[key] = source[key];
+						}
+					}
+				}
+				return target;
+			};
+
+			module.exports = assign({}, PropTypes, { validate: validate, validateWithErrors: validateWithErrors });
+
+			/***/
+		},
+		/* 1 */
+		/***/function (module, exports, __webpack_require__) {
+
+			"use strict";
+
+			/**
+	   * Copyright 2013-2015, Facebook, Inc.
+	   * All rights reserved.
+	   *
+	   * This source code is licensed under the BSD-style license found in the
+	   * LICENSE file in the root directory of this source tree. An additional grant
+	   * of patent rights can be found in the PATENTS file in the same directory.
+	   *
+	   */
+
+			function nullFunction() {
+				return null;
+			}
+
+			var ANONYMOUS = "<<anonymous>>";
+
+			// Equivalent of `typeof` but with special handling for array and regexp.
+			function getPropType(propValue) {
+				var propType = typeof propValue === 'undefined' ? 'undefined' : _typeof(propValue);
+				if (Array.isArray(propValue)) {
+					return "array";
+				}
+				if (propValue instanceof RegExp) {
+					// Old webkits (at least until Android 4.0) return 'function' rather than
+					// 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+					// passes PropTypes.object.
+					return "object";
+				}
+				return propType;
+			}
+
+			function createChainableTypeChecker(validate) {
+				function checkType(isRequired, props, propName, descriptiveName, location) {
+					descriptiveName = descriptiveName || ANONYMOUS;
+					if (props[propName] == null) {
+						var locationName = location;
+						if (isRequired) {
+							return new Error("Required " + locationName + " `" + propName + "` was not specified in " + ("`" + descriptiveName + "`."));
+						}
+						return null;
+					} else {
+						return validate(props, propName, descriptiveName, location);
+					}
+				}
+
+				var chainedCheckType = checkType.bind(null, false);
+				chainedCheckType.isRequired = checkType.bind(null, true);
+
+				return chainedCheckType;
+			}
+
+			function createPrimitiveTypeChecker(expectedType) {
+				function validate(props, propName, descriptiveName, location) {
+					var propValue = props[propName];
+					var propType = getPropType(propValue);
+					if (propType !== expectedType) {
+						var locationName = location;
+						// `propValue` being instance of, say, date/regexp, pass the 'object'
+						// check, but we can offer a more precise error message here rather than
+						// 'of type `object`'.
+						var preciseType = getPreciseType(propValue);
+
+						return new Error("Invalid " + locationName + " `" + propName + "` of type `" + preciseType + "` " + ("supplied to `" + descriptiveName + "`, expected `" + expectedType + "`."));
+					}
+					return null;
+				}
+				return createChainableTypeChecker(validate);
+			}
+
+			function createAnyTypeChecker() {
+				return createChainableTypeChecker(nullFunction);
+			}
+
+			function createArrayOfTypeChecker(typeChecker) {
+				function validate(props, propName, descriptiveName, location) {
+					var propValue = props[propName];
+					if (!Array.isArray(propValue)) {
+						var locationName = location;
+						var propType = getPropType(propValue);
+						return new Error("Invalid " + locationName + " `" + propName + "` of type " + ("`" + propType + "` supplied to `" + descriptiveName + "`, expected an array."));
+					}
+					for (var i = 0; i < propValue.length; i++) {
+						var error = typeChecker(propValue, i, descriptiveName, location);
+						if (error instanceof Error) {
+							return error;
+						}
+					}
+					return null;
+				}
+				return createChainableTypeChecker(validate);
+			}
+
+			function createInstanceTypeChecker(expectedClass) {
+				function validate(props, propName, descriptiveName, location) {
+					if (!(props[propName] instanceof expectedClass)) {
+						var locationName = location;
+						var expectedClassName = expectedClass.name || ANONYMOUS;
+						return new Error("Invalid " + locationName + " `" + propName + "` supplied to " + ("`" + descriptiveName + "`, expected instance of `" + expectedClassName + "`."));
+					}
+					return null;
+				}
+				return createChainableTypeChecker(validate);
+			}
+
+			function createEnumTypeChecker(expectedValues) {
+				function validate(props, propName, descriptiveName, location) {
+					var propValue = props[propName];
+					for (var i = 0; i < expectedValues.length; i++) {
+						if (propValue === expectedValues[i]) {
+							return null;
+						}
+					}
+
+					var locationName = location;
+					var valuesString = JSON.stringify(expectedValues);
+					return new Error("Invalid " + locationName + " `" + propName + "` of value `" + propValue + "` " + ("supplied to `" + descriptiveName + "`, expected one of " + valuesString + "."));
+				}
+				return createChainableTypeChecker(validate);
+			}
+
+			function createObjectOfTypeChecker(typeChecker) {
+				function validate(props, propName, descriptiveName, location) {
+					var propValue = props[propName];
+					var propType = getPropType(propValue);
+					if (propType !== "object") {
+						var locationName = location;
+						return new Error("Invalid " + locationName + " `" + propName + "` of type " + ("`" + propType + "` supplied to `" + descriptiveName + "`, expected an object."));
+					}
+					for (var key in propValue) {
+						if (propValue.hasOwnProperty(key)) {
+							var error = typeChecker(propValue, key, descriptiveName, location);
+							if (error instanceof Error) {
+								return error;
+							}
+						}
+					}
+					return null;
+				}
+				return createChainableTypeChecker(validate);
+			}
+
+			function createUnionTypeChecker(arrayOfTypeCheckers) {
+				function validate(props, propName, descriptiveName, location) {
+					for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+						var checker = arrayOfTypeCheckers[i];
+						if (checker(props, propName, descriptiveName, location) == null) {
+							return null;
+						}
+					}
+
+					var locationName = location;
+					return new Error("Invalid " + locationName + " `" + propName + "` supplied to " + ("`" + descriptiveName + "`."));
+				}
+				return createChainableTypeChecker(validate);
+			}
+
+			function createShapeTypeChecker(shapeTypes) {
+				function validate(props, propName, descriptiveName, location) {
+					var propValue = props[propName];
+					var propType = getPropType(propValue);
+					if (propType !== "object") {
+						var locationName = location;
+						return new Error("Invalid " + locationName + " `" + propName + "` of type `" + propType + "` " + ("supplied to `" + descriptiveName + "`, expected `object`."));
+					}
+					for (var key in shapeTypes) {
+						var checker = shapeTypes[key];
+						if (!checker) {
+							continue;
+						}
+						var error = checker(propValue, key, descriptiveName, location);
+						if (error) {
+							return error;
+						}
+					}
+					return null;
+				}
+				return createChainableTypeChecker(validate);
+			}
+
+			// This handles more types than `getPropType`. Only used for error messages.
+			// See `createPrimitiveTypeChecker`.
+			function getPreciseType(propValue) {
+				var propType = getPropType(propValue);
+				if (propType === "object") {
+					if (propValue instanceof Date) {
+						return "date";
+					} else if (propValue instanceof RegExp) {
+						return "regexp";
+					}
+				}
+				return propType;
+			}
+
+			module.exports = {
+				array: createPrimitiveTypeChecker("array"),
+				bool: createPrimitiveTypeChecker("boolean"),
+				func: createPrimitiveTypeChecker("function"),
+				number: createPrimitiveTypeChecker("number"),
+				object: createPrimitiveTypeChecker("object"),
+				string: createPrimitiveTypeChecker("string"),
+
+				any: createAnyTypeChecker(),
+				arrayOf: createArrayOfTypeChecker,
+				instanceOf: createInstanceTypeChecker,
+				objectOf: createObjectOfTypeChecker,
+				oneOf: createEnumTypeChecker,
+				oneOfType: createUnionTypeChecker,
+				shape: createShapeTypeChecker
+			};
+
+			/***/
+		},
+		/* 2 */
+		/***/function (module, exports, __webpack_require__) {
+
+			"use strict";
+
+			var _interopRequire = function _interopRequire(obj) {
+				return obj && obj.__esModule ? obj["default"] : obj;
+			};
+
+			/**
+	   * Copyright 2013-2015, Facebook, Inc.
+	   * All rights reserved.
+	   *
+	   * This source code is licensed under the BSD-style license found in the
+	   * LICENSE file in the root directory of this source tree. An additional grant
+	   * of patent rights can be found in the PATENTS file in the same directory.
+	   *
+	   */
+
+			var invariant = _interopRequire(__webpack_require__(5));
+
+			var warning = _interopRequire(__webpack_require__(4));
+
+			var loggedTypeFailures = {};
+
+			var validate = function validate(propTypes, props, className) {
+				for (var propName in propTypes) {
+					if (propTypes.hasOwnProperty(propName)) {
+						var error;
+						// Prop type validation may throw. In case they do, we don't want to
+						// fail the render phase where it didn't fail before. So we log it.
+						// After these have been cleaned up, we'll let them throw.
+						try {
+							// This is intentionally an invariant that gets caught. It's the same
+							// behavior as without this statement except with a better message.
+							invariant(typeof propTypes[propName] === "function", "%s: %s type `%s` is invalid; it must be a function, usually from " + "PropTypes.", className, "attributes", propName);
+
+							error = propTypes[propName](props, propName, className, "prop");
+						} catch (ex) {
+							error = ex;
+						}
+						if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+							// Only monitor this failure once because there tends to be a lot of the
+							// same error.
+							loggedTypeFailures[error.message] = true;
+							warning(false, "Failed propType: " + error.message);
+						}
+					}
+				}
+			};
+
+			module.exports = validate;
+
+			/***/
+		},
+		/* 3 */
+		/***/function (module, exports, __webpack_require__) {
+
+			"use strict";
+
+			var _interopRequire = function _interopRequire(obj) {
+				return obj && obj.__esModule ? obj["default"] : obj;
+			};
+
+			/**
+	   * Copyright 2013-2015, Facebook, Inc.
+	   * All rights reserved.
+	   *
+	   * This source code is licensed under the BSD-style license found in the
+	   * LICENSE file in the root directory of this source tree. An additional grant
+	   * of patent rights can be found in the PATENTS file in the same directory.
+	   *
+	   */
+
+			var invariant = _interopRequire(__webpack_require__(5));
+
+			var validateWithErrors = function validateWithErrors(propTypes, props, className) {
+				for (var propName in propTypes) {
+					if (propTypes.hasOwnProperty(propName)) {
+						var error;
+						// Prop type validation may throw. In case they do, we don't want to
+						// fail the render phase where it didn't fail before. So we log it.
+						// After these have been cleaned up, we'll let them throw.
+						try {
+							// This is intentionally an invariant that gets caught. It's the same
+							// behavior as without this statement except with a better message.
+							invariant(typeof propTypes[propName] === "function", "%s: %s type `%s` is invalid; it must be a function, usually from " + "PropTypes.", className, "attributes", propName);
+
+							error = propTypes[propName](props, propName, className, "prop");
+						} catch (ex) {
+							error = ex;
+						}
+						// rethrow the error
+						if (error instanceof Error) {
+							throw error;
+						}
+					}
+				}
+			};
+
+			module.exports = validateWithErrors;
+
+			/***/
+		},
+		/* 4 */
+		/***/function (module, exports, __webpack_require__) {
+
+			"use strict";
+
+			/**
+	   * Copyright 2014-2015, Facebook, Inc.
+	   * All rights reserved.
+	   *
+	   * This source code is licensed under the BSD-style license found in the
+	   * LICENSE file in the root directory of this source tree. An additional grant
+	   * of patent rights can be found in the PATENTS file in the same directory.
+	   *
+	   */
+
+			var warning = function warning(condition, format) {
+				for (var _len = arguments.length, args = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+					args[_key - 2] = arguments[_key];
+				}
+
+				if (format === undefined) {
+					throw new Error("`warning(condition, format, ...args)` requires a warning " + "message argument");
+				}
+
+				if (format.length < 10 || /^[s\W]*$/.test(format)) {
+					throw new Error("The warning format should be able to uniquely identify this " + "warning. Please, use a more descriptive format than: " + format);
+				}
+
+				if (!condition) {
+					var argIndex = 0;
+					var message = "Warning: " + format.replace(/%s/g, function () {
+						return args[argIndex++];
+					});
+					console.warn(message);
+					try {
+						// This error was thrown as a convenience so that you can use this stack
+						// to find the callsite that caused this warning to fire.
+						throw new Error(message);
+					} catch (x) {}
+				}
+			};
+
+			module.exports = warning;
+
+			/***/
+		},
+		/* 5 */
+		/***/function (module, exports, __webpack_require__) {
+
+			/**
+	   * BSD License
+	   *
+	   * For Flux software
+	   *
+	   * Copyright (c) 2014, Facebook, Inc. All rights reserved.
+	   *
+	   * Redistribution and use in source and binary forms, with or without modification,
+	   * are permitted provided that the following conditions are met:
+	   *
+	   *  * Redistributions of source code must retain the above copyright notice, this
+	   *    list of conditions and the following disclaimer.
+	   *
+	   *  * Redistributions in binary form must reproduce the above copyright notice,
+	   *    this list of conditions and the following disclaimer in the
+	   *    documentation and/or other materials provided with the distribution.
+	   *
+	   *  * Neither the name Facebook nor the names of its contributors may be used to
+	   *    endorse or promote products derived from this software without specific
+	   *    prior written permission.
+	   *
+	   * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+	   * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+	   * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+	   * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+	   * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+	   * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+	   * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+	   * ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+	   * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+	   * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+	   *
+	   */
+
+			"use strict";
+
+			/**
+	   * Use invariant() to assert state which your program assumes to be true.
+	   *
+	   * Provide sprintf-style format (only %s is supported) and arguments
+	   * to provide information about what broke and what you were
+	   * expecting.
+	   *
+	   * The invariant message will be stripped in production, but the invariant
+	   * will remain to ensure logic does not differ in production.
+	   */
+
+			var invariant = function invariant(condition, format, a, b, c, d, e, f) {
+				// if (process.env.NODE_ENV !== 'production') {
+				//   if (format === undefined) {
+				//     throw new Error('invariant requires an error message argument');
+				//   }
+				// }
+
+				if (!condition) {
+					var error;
+					if (format === undefined) {
+						error = new Error("Minified exception occurred; use the non-minified dev environment " + "for the full error message and additional helpful warnings.");
+					} else {
+						var args = [a, b, c, d, e, f];
+						var argIndex = 0;
+						error = new Error("Invariant Violation: " + format.replace(/%s/g, function () {
+							return args[argIndex++];
+						}));
+					}
+
+					error.framesToPop = 1; // we don't care about invariant's own frame
+					throw error;
+				}
+			};
+
+			module.exports = invariant;
+
+			/***/
+		}
+		/******/]);
+
+		/***/
+	},
+	/* 8 */
+	/***/function (module, exports) {
+
+		'use strict';
+
+		var hasOwn = Object.prototype.hasOwnProperty;
+		var toStr = Object.prototype.toString;
+
+		var isArray = function isArray(arr) {
+			if (typeof Array.isArray === 'function') {
+				return Array.isArray(arr);
+			}
+
+			return toStr.call(arr) === '[object Array]';
+		};
+
+		var isPlainObject = function isPlainObject(obj) {
+			if (!obj || toStr.call(obj) !== '[object Object]') {
+				return false;
+			}
+
+			var hasOwnConstructor = hasOwn.call(obj, 'constructor');
+			var hasIsPrototypeOf = obj.constructor && obj.constructor.prototype && hasOwn.call(obj.constructor.prototype, 'isPrototypeOf');
+			// Not own constructor property must be Object
+			if (obj.constructor && !hasOwnConstructor && !hasIsPrototypeOf) {
+				return false;
+			}
+
+			// Own properties are enumerated firstly, so to speed up,
+			// if last one is own, then all properties are own.
+			var key;
+			for (key in obj) {/**/}
+
+			return typeof key === 'undefined' || hasOwn.call(obj, key);
+		};
+
+		module.exports = function extend() {
+			var options,
+			    name,
+			    src,
+			    copy,
+			    copyIsArray,
+			    clone,
+			    target = arguments[0],
+			    i = 1,
+			    length = arguments.length,
+			    deep = false;
+
+			// Handle a deep copy situation
+			if (typeof target === 'boolean') {
+				deep = target;
+				target = arguments[1] || {};
+				// skip the boolean and the target
+				i = 2;
+			} else if ((typeof target === 'undefined' ? 'undefined' : _typeof(target)) !== 'object' && typeof target !== 'function' || target == null) {
+				target = {};
+			}
+
+			for (; i < length; ++i) {
+				options = arguments[i];
+				// Only deal with non-null/undefined values
+				if (options != null) {
+					// Extend the base object
+					for (name in options) {
+						src = target[name];
+						copy = options[name];
+
+						// Prevent never-ending loop
+						if (target !== copy) {
+							// Recurse if we're merging plain objects or arrays
+							if (deep && copy && (isPlainObject(copy) || (copyIsArray = isArray(copy)))) {
+								if (copyIsArray) {
+									copyIsArray = false;
+									clone = src && isArray(src) ? src : [];
+								} else {
+									clone = src && isPlainObject(src) ? src : {};
+								}
+
+								// Never move original objects, clone them
+								target[name] = extend(deep, clone, copy);
+
+								// Don't bring in undefined values
+							} else if (typeof copy !== 'undefined') {
+								target[name] = copy;
+							}
+						}
+					}
+				}
+			}
+
+			// Return the modified object
+			return target;
+		};
+
+		/***/
+	},
+	/* 9 */
+	/***/function (module, exports, __webpack_require__) {
+
+		'use strict';
+
+		var _propTypes = __webpack_require__(7);
+
+		var _propTypes2 = _interopRequireDefault(_propTypes);
+
+		function _interopRequireDefault(obj) {
+			return obj && obj.__esModule ? obj : { "default": obj };
+		}
+
+		var createData = {
+			defaultProps: function defaultProps() {
+				return {
+					prevBatch: 3,
+					nextBatch: 3,
+					prevSomePage: 5,
+					nextSomePage: 5
+				};
+			},
+			propTypes: {
+				page: _propTypes2["default"].number.isRequired,
+				pageCount: _propTypes2["default"].number,
+				dataCount: _propTypes2["default"].number,
+				pageSize: _propTypes2["default"].number,
+				prevBatch: _propTypes2["default"].number,
+				nextBatch: _propTypes2["default"].number,
+				prevSomePage: _propTypes2["default"].number,
+				nextSomePage: _propTypes2["default"].number
+			}
+		};
+		var render = {
+			defaultProp: createData.defaultProps(),
+			propTypes: {
+				page: 'number|required',
+				dataCount: 'number',
+				pageCount: 'number',
+				pageSize: 'number'
+			},
+			propExample: {
+				page: [1, 5],
+				dataCount: [100, 200],
+				pageCount: [10, 20],
+				pageSize: [10]
+			},
+			propDesc: {
+				page: '当前页',
+				dataCount: '总数据量',
+				pageCount: '总页码',
+				pageSize: '每页显示多少条'
+			}
+		};
+		module.exports = {
+			render: render,
+			createData: createData
+		};
+
+		/***/
+	},
+	/* 10 */
+	/***/function (module, exports) {
+
+		module.exports = React;
+
+		/***/
+	},
+	/* 11 */
+	/***/function (module, exports, __webpack_require__) {
+
+		'use strict';
+
+		var _react = __webpack_require__(10);
+
+		var _react2 = _interopRequireDefault(_react);
+
+		function _interopRequireDefault(obj) {
+			return obj && obj.__esModule ? obj : { "default": obj };
+		}
+
+		var example = function example() {
+			return arguments;
+		};
+		// more props read: https://github.com/paging/paging-js createDate
+		module.exports = {
+			defaultProps: {
+				wrapClassName: 'pa-paging--fast',
+				clsp: 'pa-paging',
+				position: ['dataCount', 'prevBtn', 'firstPage', 'prevSomePage', 'prevBatch', 'currentPage', 'nextBatch', 'nextSomePage', 'pageCount', 'lastPage', 'nextBtn', 'status', 'goto'],
+				render: {
+					dataCount: _react2["default"].createClass({
+						displayName: 'dataCount',
+
+						render: function render() {
+							return __webpack_require__(10).createElement('span', null, '\u5171', this.props.dataCount, '\u6761\u6570\u636E');
+						}
+					}),
+					prevBtn: _react2["default"].createClass({
+						displayName: 'prevBtn',
+
+						render: function render() {
+							return __webpack_require__(10).createElement('span', null, '\u4E0A\u4E00\u9875');
+						}
+					}),
+					firstPage: _react2["default"].createClass({
+						displayName: 'firstPage',
+
+						render: function render() {
+							return __webpack_require__(10).createElement('span', null, '1');
+						}
+					}),
+					prevSomePage: _react2["default"].createClass({
+						displayName: 'prevSomePage',
+
+						render: function render() {
+							return __webpack_require__(10).createElement('span', null, '...');
+						}
+					}),
+					prevBatch: _react2["default"].createClass({
+						displayName: 'prevBatch',
+
+						render: function render() {
+							return __webpack_require__(10).createElement('span', null, this.props.prevBatch[this.props.prevBatchIndex]);
+						}
+					}),
+					currentPage: _react2["default"].createClass({
+						displayName: 'currentPage',
+
+						render: function render() {
+							return __webpack_require__(10).createElement('span', null, this.props.page);
+						}
+					}),
+					nextBatch: _react2["default"].createClass({
+						displayName: 'nextBatch',
+
+						render: function render() {
+							return __webpack_require__(10).createElement('span', null, this.props.nextBatch[this.props.nextBatchIndex]);
+						}
+					}),
+					nextSomePage: _react2["default"].createClass({
+						displayName: 'nextSomePage',
+
+						render: function render() {
+							return __webpack_require__(10).createElement('span', null, '...');
+						}
+					}),
+					lastPage: _react2["default"].createClass({
+						displayName: 'lastPage',
+
+						render: function render() {
+							return __webpack_require__(10).createElement('span', null, this.props.pageCount);
+						}
+					}),
+					nextBtn: _react2["default"].createClass({
+						displayName: 'nextBtn',
+
+						render: function render() {
+							return __webpack_require__(10).createElement('span', null, '\u4E0B\u4E00\u9875');
+						}
+					}),
+					status: _react2["default"].createClass({
+						displayName: 'status',
+
+						render: function render() {
+							return __webpack_require__(10).createElement('span', { className: this.props.classNames.status }, __webpack_require__(10).createElement('span', { className: this.props.classNames.statusCurrent }, this.page), '/', __webpack_require__(10).createElement('span', { className: this.props.classNames.statusPageCount }, this.pageCount), __webpack_require__(10).createElement('span', { className: this.props.classNames.satusUnit }, '\u9875'));
+						}
+					}),
+					"goto": 'default'
+				}
+			},
+			propTypes: {
+				wrapClassName: _react.PropTypes.string,
+				clsp: _react.PropTypes.string
+			},
+			propExample: {
+				wrapClassName: example('pa-paging--status', 'pa-paging--some'),
+				clsp: example('ui-paging', 'm-paging', 'm-pagingNight')
+			},
+			propDesc: {
+				wrapClassName: '\nComposition wrap element className\n        ',
+				clsp: '\n        ClassName prefix\n        '
+			}
+		};
+
+		/***/
+	},
+	/* 12 */
+	/***/function (module, exports, __webpack_require__) {
+
+		// style-loader: Adds some css to the DOM by adding a <style> tag
+
+		// load the styles
+		var content = __webpack_require__(13);
+		if (typeof content === 'string') content = [[module.id, content, '']];
+		// add the styles to the DOM
+		var update = __webpack_require__(15)(content, {});
+		if (content.locals) module.exports = content.locals;
+		// Hot Module Replacement
+		if (false) {
+			// When the styles change, update the <style> tags
+			if (!content.locals) {
+				module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/less-loader/index.js!./index.css", function () {
+					var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/less-loader/index.js!./index.css");
+					if (typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+					update(newContent);
+				});
+			}
+			// When the module is disposed, remove the <style> tags
+			module.hot.dispose(function () {
+				update();
+			});
+		}
+
+		/***/
+	},
+	/* 13 */
+	/***/function (module, exports, __webpack_require__) {
+
+		exports = module.exports = __webpack_require__(14)();
+		// imports
+
+
+		// module
+		exports.push([module.id, "html .pa-paging .pa-pagingHide {\n  display: none;\n}\nhtml .pa-paging .pa-pagingDisable {\n  opacity: .8;\n}\nhtml .pa-paging .pa-pagingDisable:hover {\n  background-color: white;\n  border-color: #eee;\n  color: #666;\n  cursor: auto;\n}\n.pa-paging--fast {\n  line-height: 25px;\n  font-size: 14px;\n}\n.pa-paging--fast .pa-paging-prevBtn,\n.pa-paging--fast .pa-paging-nextBtn {\n  padding-left: .5em;\n  padding-right: .5em;\n}\n.pa-paging--fast .pa-paging-firstPage,\n.pa-paging--fast .pa-paging-prevSomePage,\n.pa-paging--fast .pa-paging-prevBatch,\n.pa-paging--fast .pa-paging-currentPage,\n.pa-paging--fast .pa-paging-nextBatch,\n.pa-paging--fast .pa-paging-nextSomePage,\n.pa-paging--fast .pa-paging-lastPage,\n.pa-paging--fast .pa-paging-prevBtn,\n.pa-paging--fast .pa-paging-nextBtn {\n  display: inline-block;\n  border: 1px solid #eee;\n  color: #666;\n  min-width: 25px;\n  min-height: 25px;\n  text-align: center;\n  margin-left: 2px;\n  margin-right: 2px;\n  -webkit-border-radius: 3px;\n          border-radius: 3px;\n  background-color: white;\n}\n.pa-paging--fast .pa-paging-firstPage:hover,\n.pa-paging--fast .pa-paging-prevSomePage:hover,\n.pa-paging--fast .pa-paging-prevBatch:hover,\n.pa-paging--fast .pa-paging-nextBatch:hover,\n.pa-paging--fast .pa-paging-nextSomePage:hover,\n.pa-paging--fast .pa-paging-lastPage:hover,\n.pa-paging--fast .pa-paging-prevBtn:hover,\n.pa-paging--fast .pa-paging-nextBtn:hover {\n  background-color: #efefef;\n  border-color: #ddd;\n  cursor: pointer;\n}\n.pa-paging--fast .pa-paging-currentPage {\n  background-color: #20a0ff;\n  color: white;\n  border-color: #20a0ff;\n}\n.pa-paging--fast .pa-paging-goto-input {\n  color: #666;\n  -webkit-border-radius: 3px;\n          border-radius: 3px;\n  display: inline-block;\n  height: 25px;\n  width: 3em;\n  padding: 0;\n  border: 1px solid #eee;\n  text-align: center;\n}\n.pa-paging--fast .pa-paging-goto-submit {\n  cursor: pointer;\n  margin-left: 5px;\n  padding-left: .3em;\n  padding-right: .3em;\n  display: inline-block;\n  border: 1px solid #eee;\n  color: #666;\n  -webkit-border-radius: 3px;\n          border-radius: 3px;\n  height: 25px;\n  background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f9f9f9));\n  background: -moz-linear-gradient(top, #fcfcfc, #f9f9f9);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f9f9f9');\n  background: -webkit-gradient(linear, left top, left bottom, from(top), color-stop(#fcfcfc), to(#f9f9f9));\n  background: -webkit-linear-gradient(top, #fcfcfc, #f9f9f9);\n  background: linear-gradient(top, #fcfcfc, #f9f9f9);\n}\n", ""]);
+
+		// exports
+
+
+		/***/
+	},
+	/* 14 */
+	/***/function (module, exports) {
+
+		/*
+	 	MIT License http://www.opensource.org/licenses/mit-license.php
+	 	Author Tobias Koppers @sokra
+	 */
+		// css base code, injected by the css-loader
+		module.exports = function () {
+			var list = [];
+
+			// return the list of modules as css string
+			list.toString = function toString() {
+				var result = [];
+				for (var i = 0; i < this.length; i++) {
+					var item = this[i];
+					if (item[2]) {
+						result.push("@media " + item[2] + "{" + item[1] + "}");
+					} else {
+						result.push(item[1]);
+					}
+				}
+				return result.join("");
+			};
+
+			// import a list of modules into the list
+			list.i = function (modules, mediaQuery) {
+				if (typeof modules === "string") modules = [[null, modules, ""]];
+				var alreadyImportedModules = {};
+				for (var i = 0; i < this.length; i++) {
+					var id = this[i][0];
+					if (typeof id === "number") alreadyImportedModules[id] = true;
+				}
+				for (i = 0; i < modules.length; i++) {
+					var item = modules[i];
+					// skip already imported module
+					// this implementation is not 100% perfect for weird media query combinations
+					//  when a module is imported multiple times with different media queries.
+					//  I hope this will never occur (Hey this way we have smaller bundles)
+					if (typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+						if (mediaQuery && !item[2]) {
+							item[2] = mediaQuery;
+						} else if (mediaQuery) {
+							item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+						}
+						list.push(item);
+					}
+				}
+			};
+			return list;
+		};
+
+		/***/
+	},
+	/* 15 */
+	/***/function (module, exports, __webpack_require__) {
+
+		/*
+	 	MIT License http://www.opensource.org/licenses/mit-license.php
+	 	Author Tobias Koppers @sokra
+	 */
+		var stylesInDom = {},
+		    memoize = function memoize(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		    isOldIE = memoize(function () {
+			return (/msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase())
+			);
+		}),
+		    getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		    singletonElement = null,
+		    singletonCounter = 0,
+		    styleElementsInsertedAtTop = [];
+
+		module.exports = function (list, options) {
+			if (false) {
+				if ((typeof document === 'undefined' ? 'undefined' : _typeof(document)) !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+			}
+
+			options = options || {};
+			// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+			// tags it will allow on a page
+			if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+			// By default, add <style> tags to the bottom of <head>.
+			if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+			var styles = listToStyles(list);
+			addStylesToDom(styles, options);
+
+			return function update(newList) {
+				var mayRemove = [];
+				for (var i = 0; i < styles.length; i++) {
+					var item = styles[i];
+					var domStyle = stylesInDom[item.id];
+					domStyle.refs--;
+					mayRemove.push(domStyle);
+				}
+				if (newList) {
+					var newStyles = listToStyles(newList);
+					addStylesToDom(newStyles, options);
+				}
+				for (var i = 0; i < mayRemove.length; i++) {
+					var domStyle = mayRemove[i];
+					if (domStyle.refs === 0) {
+						for (var j = 0; j < domStyle.parts.length; j++) {
+							domStyle.parts[j]();
+						}delete stylesInDom[domStyle.id];
+					}
+				}
+			};
+		};
+
+		function addStylesToDom(styles, options) {
+			for (var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				if (domStyle) {
+					domStyle.refs++;
+					for (var j = 0; j < domStyle.parts.length; j++) {
+						domStyle.parts[j](item.parts[j]);
+					}
+					for (; j < item.parts.length; j++) {
+						domStyle.parts.push(addStyle(item.parts[j], options));
+					}
+				} else {
+					var parts = [];
+					for (var j = 0; j < item.parts.length; j++) {
+						parts.push(addStyle(item.parts[j], options));
+					}
+					stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts };
+				}
+			}
+		}
+
+		function listToStyles(list) {
+			var styles = [];
+			var newStyles = {};
+			for (var i = 0; i < list.length; i++) {
+				var item = list[i];
+				var id = item[0];
+				var css = item[1];
+				var media = item[2];
+				var sourceMap = item[3];
+				var part = { css: css, media: media, sourceMap: sourceMap };
+				if (!newStyles[id]) styles.push(newStyles[id] = { id: id, parts: [part] });else newStyles[id].parts.push(part);
+			}
+			return styles;
+		}
+
+		function insertStyleElement(options, styleElement) {
+			var head = getHeadElement();
+			var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+			if (options.insertAt === "top") {
+				if (!lastStyleElementInsertedAtTop) {
+					head.insertBefore(styleElement, head.firstChild);
+				} else if (lastStyleElementInsertedAtTop.nextSibling) {
+					head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+				} else {
+					head.appendChild(styleElement);
+				}
+				styleElementsInsertedAtTop.push(styleElement);
+			} else if (options.insertAt === "bottom") {
+				head.appendChild(styleElement);
+			} else {
+				throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+			}
+		}
+
+		function removeStyleElement(styleElement) {
+			styleElement.parentNode.removeChild(styleElement);
+			var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+			if (idx >= 0) {
+				styleElementsInsertedAtTop.splice(idx, 1);
+			}
+		}
+
+		function createStyleElement(options) {
+			var styleElement = document.createElement("style");
+			styleElement.type = "text/css";
+			insertStyleElement(options, styleElement);
+			return styleElement;
+		}
+
+		function createLinkElement(options) {
+			var linkElement = document.createElement("link");
+			linkElement.rel = "stylesheet";
+			insertStyleElement(options, linkElement);
+			return linkElement;
+		}
+
+		function addStyle(obj, options) {
+			var styleElement, update, remove;
+
+			if (options.singleton) {
+				var styleIndex = singletonCounter++;
+				styleElement = singletonElement || (singletonElement = createStyleElement(options));
+				update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+				remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+			} else if (obj.sourceMap && typeof URL === "function" && typeof URL.createObjectURL === "function" && typeof URL.revokeObjectURL === "function" && typeof Blob === "function" && typeof btoa === "function") {
+				styleElement = createLinkElement(options);
+				update = updateLink.bind(null, styleElement);
+				remove = function remove() {
+					removeStyleElement(styleElement);
+					if (styleElement.href) URL.revokeObjectURL(styleElement.href);
+				};
+			} else {
+				styleElement = createStyleElement(options);
+				update = applyToTag.bind(null, styleElement);
+				remove = function remove() {
+					removeStyleElement(styleElement);
+				};
+			}
+
+			update(obj);
+
+			return function updateStyle(newObj) {
+				if (newObj) {
+					if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) return;
+					update(obj = newObj);
+				} else {
+					remove();
+				}
+			};
+		}
+
+		var replaceText = function () {
+			var textStore = [];
+
+			return function (index, replacement) {
+				textStore[index] = replacement;
+				return textStore.filter(Boolean).join('\n');
+			};
+		}();
+
+		function applyToSingletonTag(styleElement, index, remove, obj) {
+			var css = remove ? "" : obj.css;
+
+			if (styleElement.styleSheet) {
+				styleElement.styleSheet.cssText = replaceText(index, css);
+			} else {
+				var cssNode = document.createTextNode(css);
+				var childNodes = styleElement.childNodes;
+				if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+				if (childNodes.length) {
+					styleElement.insertBefore(cssNode, childNodes[index]);
+				} else {
+					styleElement.appendChild(cssNode);
+				}
+			}
+		}
+
+		function applyToTag(styleElement, obj) {
+			var css = obj.css;
+			var media = obj.media;
+
+			if (media) {
+				styleElement.setAttribute("media", media);
+			}
+
+			if (styleElement.styleSheet) {
+				styleElement.styleSheet.cssText = css;
+			} else {
+				while (styleElement.firstChild) {
+					styleElement.removeChild(styleElement.firstChild);
+				}
+				styleElement.appendChild(document.createTextNode(css));
+			}
+		}
+
+		function updateLink(linkElement, obj) {
+			var css = obj.css;
+			var sourceMap = obj.sourceMap;
+
+			if (sourceMap) {
+				// http://stackoverflow.com/a/26603875
+				css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+			}
+
+			var blob = new Blob([css], { type: "text/css" });
+
+			var oldSrc = linkElement.href;
+
+			linkElement.href = URL.createObjectURL(blob);
+
+			if (oldSrc) URL.revokeObjectURL(oldSrc);
+		}
+
+		/***/
+	}
+	/******/]);
+
+/***/ }
+/******/ ]);</script></div>
+<a href="https://github.com/paging/react-paging">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" />
+</a>
+<script>/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	window.FASTBOOT = {
+	  package: {
+	    name: "react-paging",
+	    homepage: "https://paging.github.io/react-paging/"
+	  }
+	};if (!/\/$/.test(window.FASTBOOT.package.homepage)) {
+	  window.FASTBOOT.package.homepage = window.FASTBOOT.package.homepage + '/';
+	}
+
+/***/ }
+/******/ ]);</script>
+<script src="doc/static/doc.js"></script>
+</body>
+</html>
