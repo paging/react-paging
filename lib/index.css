@@ -2,8 +2,18 @@
 html .pa-paging .pa-pagingHide {
     display: none;
 }
+html .pa-paging .pa-pagingDisable {
+    opacity: .8;
+}
+html .pa-paging .pa-pagingDisable:hover {
+    background-color: white;
+    border-color:#eee;
+    color:#666;
+    cursor: auto;
+}
 .pa-paging--fast {
     line-height: 25px;
+    font-size:14px;
     .pa-paging-prevBtn,
     .pa-paging-nextBtn {
         padding-left: .5em;
@@ -18,7 +28,6 @@ html .pa-paging .pa-pagingHide {
     .pa-paging-lastPage,
     .pa-paging-prevBtn,
     .pa-paging-nextBtn {
-        font-size:14px;
         display: inline-block;
         border:1px solid #eee;
         color:#666;
@@ -52,7 +61,6 @@ html .pa-paging .pa-pagingHide {
     }
     .pa-paging-goto-input {
         color:#666;
-        font-size:14px;
         border-radius: 3px;
         display: inline-block;
         height: 25px;
@@ -69,7 +77,12 @@ html .pa-paging .pa-pagingHide {
         display: inline-block;
         border:1px solid #eee;
         color:#666;
+        border-radius: 3px;
         height: 25px;
-        background: #efefef;
+        background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f9f9f9));
+        background: -moz-linear-gradient(top, #fcfcfc, #f9f9f9);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f9f9f9');
+        background: -o-linear-gradient(top, #fcfcfc, #f9f9f9);
+        background: linear-gradient(top, #fcfcfc, #f9f9f9);
     }
 }

@@ -11,6 +11,7 @@
 
 🌀 [Example](./example/README.md) 🌀 [Doc](./doc/README.md) 🌀 [Test](./test/README.md)  
 
+
 <!-- MARKRUN-HTML </div> -->
 
 ## 📦 Install
@@ -24,34 +25,30 @@ npm i react-paging --save
 ````html
 <div id="demo"></div>
 ````
-````css
-.my-paging--some .pa-paging-currentPage{
-    color:red;
-}
-````
+
 ````js
 var Paging = require('react-paging')
 var React = require('react')
 var App = React.createClass({
     getInitialState: function () {
         return {
-            page: 1
+            page: 10
         }
     },
     render: function () {
         var self = this
-        var props = {
-            wrapClassName: 'my-paging--some',
-            page: self.state.page,
-            pageCount: 10,
-            onChange: function (page) {
-                self.setState({
-                    page: page
-                })
-            }
-        }
         return (
-            <Paging {...props}/>
+            <div>
+                <Paging {...{
+                    page: self.state.page,
+                    pageCount: 20,
+                    onChange: function (page) {
+                        self.setState({
+                            page: page
+                        })
+                    }
+                }} />
+            </div>
         )
     }
 })
@@ -70,7 +67,11 @@ ReactDOM.render(<App />, document.getElementById('demo'))
 -->
 
 
-<!--MARKRUN-HTML
+## .pa-paging--fast
+
+[default style](./lib/index.css)
+
+
 <style>.gc-comments {font:12px/1.5 Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif}</style>
 <script src="https://unpkg.com/github-comments@latest/gc.js"></script>
 <div class="gc-comments" data-repos="paging/react-paging" data-issues="1" >
@@ -81,7 +82,7 @@ ReactDOM.render(<App />, document.getElementById('demo'))
         Synchronous comments <a target="_blank" href="issues_link">issues_link</a>
     </div>
 </div>
--->
+
 
 ## 🔨 development
 
